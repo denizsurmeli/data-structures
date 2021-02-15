@@ -1,2 +1,2 @@
 # data-structures
-implementation of data structures in C++ with generalisation 
+implementation of data structures in C++ with templates
