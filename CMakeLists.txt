@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.17)
+project(data-structures)
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    set(CMAKE_CXX_EXTENSIONS  OFF)
+    set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+    include(CTest)
+endif()
+
+add_subdirectory(src)
+add_subdirectory(apps)
