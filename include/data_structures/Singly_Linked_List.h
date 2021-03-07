@@ -41,7 +41,7 @@ bool Singly_Linked_List<T>::empty() const {
   return head == nullptr;
 }
 /**
- * @TODO:Write DOC 001
+ * Returns head node's value.
  * @tparam T
  * @return Node's head as a reference, reciever can not mutate the node.
  */
@@ -50,9 +50,11 @@ const T& Singly_Linked_List<T>::front() const {
   return this->head->element;
 }
 /**
- *
+ * Adds a new node with value to the beginning of the list.
  * @tparam T
- * @param value
+ * @param value Adding the value as a new node to the start of the list.
+ *
+ * @return None.
  */
 template <typename T>
 void Singly_Linked_List<T>::add_front(const T& value){
@@ -62,8 +64,10 @@ void Singly_Linked_List<T>::add_front(const T& value){
   head = temp;
 }
 /**
+ * Removing the front node of the list.
  *
  * @tparam T
+ * @return None.
  */
 template <typename T>
 void Singly_Linked_List<T>::remove_front() {
