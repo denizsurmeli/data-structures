@@ -30,6 +30,7 @@ public:
   const T& back() const;
   void push_back(const T& value);
   T pop_back();
+  T pop(int index);
   bool exist_at(int index) const;
   T at(int index) const;
   int length() const;
@@ -72,7 +73,7 @@ template<typename T>
 template <typename T>
 Linked_List<T>::~Linked_List(){
   //@TODO:rebuild destructor
-  while(!this->empty())
+  while(this->head != nullptr)
     this->pop_front();
 }
 /**
@@ -134,11 +135,12 @@ void Linked_List<T>::push_front(const T& value){
  */
 template <typename T>
 T Linked_List<T>::pop_front() {
+  //@FIXME:lol i fixed you stop crying
   Node<T>* temp = this->head;
   this->head  = temp->next;
   T hold = temp->element;
   delete temp;
-  this->size++;
+  this->size--;
   return hold;
 }
 /**

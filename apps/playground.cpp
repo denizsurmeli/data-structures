@@ -10,11 +10,9 @@ int main(){
   v.push_front(50);
   std::cout<<v.empty()<<std::endl;
   int arr[] = {1,2,3,4,5};
-  Linked_List<int>* c{new Linked_List<int>(arr,5)};
-  c->empty();
+  v.pop_front();
 
-
-
+  v.push_front(50);
 
   return 0;
 }
