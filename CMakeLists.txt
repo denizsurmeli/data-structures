@@ -5,6 +5,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     set_property(GLOBAL PROPERTY USE_FOLDERS ON)
     include(CTest)
 endif()
-
+enable_testing()
 add_subdirectory(src)
 add_subdirectory(apps)
+add_subdirectory(tests)

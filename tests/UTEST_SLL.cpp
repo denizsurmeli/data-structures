@@ -4,14 +4,15 @@
 
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch.hpp"
-#include "../include/data_structures/Singly_Linked_List.h"
+#include "../include/data_structures/Linked_List.h"
+#include <vector>
 
-TEST_CASE("Singly_Linked_List base functions tests"){
-  Singly_Linked_List<int> v{};
-  v.add_front(1);
-  v.add_front(2);
-  v.add_front(3);
-  REQUIRE(v.front() == 3);
-  REQUIRE(v.empty() == false);
-
+TEST_CASE("Linked_List<T>::empty() --EXPECT CORRECT"){
+  //arbitrary <T> type is okay
+  Linked_List<int> v{};
+  REQUIRE(v.empty() == TRUE);
+}
+TEST_CASE("Linked_List<T>::empty() --EXPECT FALSE"){
+  int arr[] = {1,2,3,4,5};
+  Linked_List<int> v{}
 }

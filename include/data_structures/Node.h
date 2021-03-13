@@ -4,6 +4,8 @@
 
 #ifndef DATA_STRUCTURES_INCLUDE_DATA_STRUCTURES_NODE_H
 #define DATA_STRUCTURES_INCLUDE_DATA_STRUCTURES_NODE_H
+#include <iostream>
+
 /**
  *
  * @tparam T arbitrary package value for Node.h
@@ -18,10 +20,14 @@ class Node{
 public:
   Node();
   explicit Node(T value);
-  Node(T value,T* next_value);
+  [[deprecated]] Node(T value,T* next_value);
+  friend std::ostream& operator<<(std::ostream& stream,const Node& ref);
   T element;
   Node<T>* next;
+  Node<T>* previous;
 };
+
+
 /**
  * Constructor for Node.h
  * @return None.
@@ -30,6 +36,7 @@ template <typename T>
 Node<T>::Node(){
   this->element = T{};
   this->next = nullptr;
+  this->previous = nullptr;
 }
 
 /**
@@ -42,6 +49,7 @@ template <typename T>
 Node<T>::Node(T value) {
   this->element = value;
   this->next = nullptr;
+  this->previous = nullptr;
 }
 
 /**
@@ -52,8 +60,14 @@ Node<T>::Node(T value) {
  * @return None.
  */
 template <typename T>
-Node<T>::Node(T value, T *next_value) {
+[[deprecated]] Node<T>::Node(T value, T *next_value) {
   this->element = value;
   this->next = next_value;
+  this->previous = nullptr;
+}
+template <typename T>
+std::ostream &operator<<(std::ostream &stream, const Node<T> &ref) {
+  stream << ref.previous <<"<--" << ref.element << "-->" << ref.next;
+  return stream;
 }
 #endif //DATA_STRUCTURES_INCLUDE_DATA_STRUCTURES_NODE_H
